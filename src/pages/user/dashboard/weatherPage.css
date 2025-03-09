@@ -1,0 +1,53 @@
+/* src/pages/WeatherPage.css */
+
+.weather-container {
+    /* Gradient xanh - xanh dương nhạt, bạn có thể tuỳ chỉnh */
+    background: linear-gradient(90deg, #42b3f5 0%, #72e6c3 100%);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    color: #000000;
+    text-align: center;
+    max-width: 900px;  /* Giới hạn chiều rộng nếu muốn */
+  }
+  
+  .weather-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  .weather-forecast {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 16px;
+  }
+  
+  .weather-day {
+    flex: 1;
+    min-width: 100px;  /* Mỗi ngày có tối thiểu 100px */
+    background-color: rgba(255, 255, 255, 0.2); /* Nền trong suốt nhẹ */
+    border-radius: 12px;
+    padding: 16px 8px 16px;
+  }
+  
+  .weather-day-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .weather-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 8px;
+  }
+  
+  .weather-humidity,
+  .weather-temp {
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  

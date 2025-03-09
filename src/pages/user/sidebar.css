@@ -1,0 +1,45 @@
+/* src/components/Sidebar.css */
+.sidebar-container {
+    width: 200px;
+    background-color: #b3e283; /* Màu xanh lá tuỳ chọn */
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .sidebar-header {
+    margin-bottom: 24px;
+  }
+  
+  .sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .sidebar-menu li {
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .sidebar-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .sidebar-menu li a:hover {
+    font-weight: 500;
+  }
+  
+  /* Khi NavLink đang active, đổi màu nền hoặc chữ */
+.active-link {
+    background-color: #ddd; /* Màu nền highlight */
+    font-weight: bold;
+    color: #000; /* Màu chữ khác để nổi bật */
+  }
+  
