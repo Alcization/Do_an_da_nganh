@@ -14,14 +14,10 @@ import Layout from './pages/user/layout.jsx';
 import DashBoard from './pages/user/dashboard/dashboard.jsx'
 
 import Logs from './pages/user/logs/logs.jsx'
-import Temperature from './pages/user/logs/temperature/temperature.jsx'
-import Humidity from './pages/user/logs/humidity/humidity.jsx'
-import Moisture from './pages/user/logs/moisture/moisture.jsx'
-import Light from './pages/user/logs/light/light.jsx'
+
+import Garden from './pages/user/garden/garden.jsx'
 
 import Devices from './pages/user/devices/devices.jsx'
-import Input from './pages/user/devices/input/input.jsx'
-import Output from './pages/user/devices/output/output.jsx'
 
 import Setting from './pages/user/setting/setting.jsx'
 
@@ -56,38 +52,14 @@ const router = createBrowserRouter([
           {
             path: 'logs',
             element: <Logs />,
-            children: [
-              {
-                path: 'temperature',
-                element: <Temperature />
-              },
-              {
-                path: 'humidity',
-                element: <Humidity />
-              },
-              {
-                path: 'moisture',
-                element: <Moisture />
-              },
-              {
-                path: 'light',
-                element: <Light />
-              }
-            ]
+          },
+          {
+            path: 'garden',
+            element: <Garden />,
           },
           {
             path: 'devices',
             element: <Devices />,
-            children: [
-              {
-                path: 'input',
-                element: <Input />
-              },
-              {
-                path: 'output',
-                element: <Output />
-              }
-            ]
           },
           {
             path: 'setting',

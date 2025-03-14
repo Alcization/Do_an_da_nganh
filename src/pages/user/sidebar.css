@@ -1,45 +1,116 @@
 /* src/components/Sidebar.css */
 .sidebar-container {
-    width: 200px;
-    background-color: #b3e283; /* Màu xanh lá tuỳ chọn */
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-  }
+  width: 200px;
+  background-color: #b3e283; /* Màu xanh lá tuỳ chọn */
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
   
-  .sidebar-header {
-    margin-bottom: 24px;
-  }
+.sidebar-header {
+  margin-bottom: 24px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.sidebar-menu li {
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.sidebar-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+}
   
-  .sidebar-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    margin-top: 100px;
-  }
-  
-  .sidebar-menu li {
-    margin-top: 20px;
-    margin-bottom: 12px;
-  }
-  
-  .sidebar-menu li a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 8px;
-    border-radius: 4px;
-  }
-  
-  .sidebar-menu li a:hover {
-    font-weight: 500;
-  }
-  
-  /* Khi NavLink đang active, đổi màu nền hoặc chữ */
 .active-link {
-    background-color: #ddd; /* Màu nền highlight */
-    font-weight: bold;
-    color: #000; /* Màu chữ khác để nổi bật */
-  }
+  background-color: #ddd;
+  font-weight: bold;
+  color: #000;
+}
+  
+.sidebar-footer {
+  margin-top: auto;
+  padding: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-user {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ddd, #bdc5d2);
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: #000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  color:#010;
+  text-align: left;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.user-role {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  text-align: left;
+  color: #000;
+  cursor: pointer;
+  width: 100%;
+}
   

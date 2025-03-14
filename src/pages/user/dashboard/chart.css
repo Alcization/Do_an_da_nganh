@@ -6,7 +6,7 @@
     padding: 20px;
     margin-top: 10px;
     width: 90%;
-    max-width: 700px; /* Giới hạn chiều rộng nếu muốn */
+    max-width: 1000px; /* Giới hạn chiều rộng nếu muốn */
     color: #333;
     text-align: center;
   }

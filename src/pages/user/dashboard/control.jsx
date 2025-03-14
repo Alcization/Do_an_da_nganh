@@ -143,33 +143,36 @@ const Control = () => {
         <div>Error: {error}</div>
       ) : (
         <>
-          <div className={styles.controlItem}>
-            <button
-              onClick={togglePump}
-              className={styles.controlButton}
-              disabled={!isManual}  // Vô hiệu hóa nếu không ở chế độ thủ công
-            >
-              <img
-                src={pumpState === "1" ? FanAnimation : FanOff}
-                alt="Pump Control"
-                className={styles.controlImage}
-              />
-            </button>
-            <div className={styles.label}>Máy bơm</div>
-          </div>
-          <div className={styles.controlItem}>
-            <button
-              onClick={toggleLed}
-              className={styles.controlButton}
-              disabled={!isManual}  // Vô hiệu hóa nếu không ở chế độ thủ công
-            >
-              <img
-                src={ledState === "1" ? LightOn : LightOff}
-                alt="LED Control"
-                className={styles.controlImage}
-              />
-            </button>
-            <div className={styles.label}>Đèn</div>
+          <div className={styles.controlSection}>
+            <div className={styles.controlItem}>
+              <button
+                onClick={togglePump}
+                className={styles.controlButton}
+                disabled={!isManual}  // Vô hiệu hóa nếu không ở chế độ thủ công
+              >
+                <img
+                  src={pumpState === "1" ? FanAnimation : FanOff}
+                  alt="Pump Control"
+                  className={styles.controlImage}
+                />
+              </button>
+              <div className={styles.label}>Máy bơm</div>
+            </div>
+
+            <div className={styles.controlItem}>
+              <button
+                onClick={toggleLed}
+                className={styles.controlButton}
+                disabled={!isManual}  // Vô hiệu hóa nếu không ở chế độ thủ công
+              >
+                <img
+                  src={ledState === "1" ? LightOn : LightOff}
+                  alt="LED Control"
+                  className={styles.controlImage}
+                />
+              </button>
+              <div className={styles.label}>Đèn</div>
+            </div>
           </div>
         </>
       )}

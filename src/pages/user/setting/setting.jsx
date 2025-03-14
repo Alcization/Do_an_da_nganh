@@ -1,10 +1,10 @@
 import React from "react";
-import './setting.css';
+import styles from './setting.module.css';
 
 const Setting = () => {
     return (
         <div className="setting">
-        <h1>Setting</h1>
+        <h1>Người dùng</h1>
         </div>
     );
 }
