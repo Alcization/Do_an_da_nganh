@@ -1,6 +1,0 @@
-/* dashboard.css */
-.charts-row {
-    display: flex;       /* Xếp ngang bằng Flexbox */
-    gap: 20px;           /* Khoảng cách giữa các biểu đồ */
-    align-items: flex-start;  /* Hoặc center tùy ý */
-  }

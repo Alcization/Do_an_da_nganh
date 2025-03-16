@@ -14,13 +14,11 @@ import IconNotification from '../../assets/iconNotification.png';
 function Sidebar() {
   const navigate = useNavigate();
 
-  // Giả định user lấy từ localStorage hoặc context
   const user = {
     name: "Nguyễn Khánh Lộc",
     role: "Quản lý",
   };
 
-  // Tạo chữ viết tắt từ tên (ví dụ: John Doe → JD)
   const getInitials = (name) => {
     return name
       .split(' ')
