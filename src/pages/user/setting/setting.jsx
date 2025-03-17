@@ -11,6 +11,7 @@ function Setting() {
   const [users, setUsers] = useState(initialUsers);
   const [addingNew, setAddingNew] = useState(false);
   const [deletingUser, setDeletingUser] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
   const [newUserData, setNewUserData] = useState({
     name: '',
     role: 'Công nhân',
@@ -47,12 +48,26 @@ function Setting() {
     setDeletingUser(null);
   };
 
+  // Lọc người dùng theo tên (không phân biệt hoa thường)
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className={styles.container}>
       <h1>Quản Lý Người Dùng</h1>
-      <button className={styles.addButton} onClick={() => setAddingNew(true)}>
-        Thêm Người Dùng
-      </button>
+      <div className={styles.controls}>
+        <input
+          type="text"
+          placeholder="Tìm kiếm theo tên"
+          className={styles.searchInput}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button className={styles.addButton} onClick={() => setAddingNew(true)}>
+          Thêm Người Dùng
+        </button>
+      </div>
 
       <table className={styles.userTable}>
         <thead>
@@ -66,7 +81,7 @@ function Setting() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {filteredUsers.map((user) => (
             <tr key={user.id}>
               <td>{user.name}</td>
               <td>{user.role}</td>
