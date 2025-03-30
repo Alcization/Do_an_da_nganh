@@ -1,4 +1,3 @@
-// src/components/fan.jsx
 import React, { useState } from 'react';
 import './fan.css';
 import FanAnimation from '../../../assets/fan.gif';

@@ -1,4 +1,3 @@
-// src/pages/DonutChartPage.jsx
 import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
@@ -9,10 +8,8 @@ import {
 import { Doughnut } from 'react-chartjs-2';
 import './piechart.css';
 
-// Đăng ký các thành phần cơ bản của Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-// ========== PLUGIN hiển thị text ở giữa Doughnut ========== //
 const centerTextPlugin = {
   id: 'centerTextPlugin',
   beforeDraw: (chart, args, options) => {
@@ -38,15 +35,14 @@ const centerTextPlugin = {
 // Đăng ký plugin vào Chart.js
 ChartJS.register(centerTextPlugin);
 
-// ========== Thông tin Adafruit IO ========== //
 const ADAFRUIT_USERNAME = "nhatnam1308";
 const ADAFRUIT_API_KEY = "aio_KnNE17mpKp91gUsfTj29pP00orQ6";
 
 // Các FEED_KEY
-const FEED_TEMP       = "bbc-temp";        // Nhiệt độ
-const FEED_HUMID_AIR  = "bbc-humid-air";   // Độ ẩm không khí
-const FEED_HUMID_SOIL = "bbc-humid-soil";  // Độ ẩm đất
-const FEED_LIGHT      = "light";           // Cường độ ánh sáng
+const FEED_TEMP       = "bbc-temp";  
+const FEED_HUMID_AIR  = "bbc-humid-air"; 
+const FEED_HUMID_SOIL = "bbc-humid-soil"; 
+const FEED_LIGHT      = "light";
 
 function PieChartPage() {
   // Lưu 4 giá trị mới nhất của mỗi feed
@@ -95,13 +91,7 @@ function PieChartPage() {
   if (loading) {
     return <div className="donut-page-container">Đang tải dữ liệu...</div>;
   }
-
-  // ========== Tạo 4 biểu đồ Doughnut ========== //
-  // Mỗi biểu đồ có 2 phần: [giá trị, 100 - giá trị]
-  // Màu sắc: 1) Nhiệt độ (red), 2) Độ ẩm không khí (green),
-  //          3) Độ ẩm đất (blue), 4) Ánh sáng (yellow).
-  // Label text ở giữa plugin: "xx °C", "yy %", "zz %", "kk kLux"
-
+  
   const chartDataTemp = {
     labels: ['Giá trị', 'Còn lại'],
     datasets: [

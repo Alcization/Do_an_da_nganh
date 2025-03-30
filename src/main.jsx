@@ -8,24 +8,19 @@ import ErrorLayout from './pages/error.jsx'
 
 import Introduce from './pages/introduce/introduce.jsx'
 import Login from './pages/login/login.jsx'
+import Forgot from './pages/forgot/forgot.jsx'
+import Register from './pages/register/register.jsx'
 
 import Layout from './pages/user/layout.jsx';
 
 import DashBoard from './pages/user/dashboard/dashboard.jsx'
-
 import Logs from './pages/user/logs/logs.jsx'
-
 import Garden from './pages/user/garden/garden.jsx'
-
 import Devices from './pages/user/devices/devices.jsx'
-
 import Setting from './pages/user/setting/setting.jsx'
+import Profile from './pages/user/profile/profile.jsx'
 
-const App = () => {
-  const [user, setUser] = React.useState(null)
-  const [loading, setLoading] = React.useState(true)
-
-};
+import ProtectedRoute from "./pages/protectedRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,31 +37,31 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
+        path: 'forgot',
+        element: <Forgot />
+      },
+      {
+        path: 'register',
+        element: <Register />
+      },
+      {
         path: 'user',
-        element: <Layout />,
+        element: <ProtectedRoute />, // Bảo vệ tất cả route con của "user"
         children: [
           {
-            path: 'dashboard',
-            element: <DashBoard />
-          },
-          {
-            path: 'logs',
-            element: <Logs />,
-          },
-          {
-            path: 'garden',
-            element: <Garden />,
-          },
-          {
-            path: 'devices',
-            element: <Devices />,
-          },
-          {
-            path: 'setting',
-            element: <Setting />
-          },
-        ] 
-      },
+            path: '',
+            element: <Layout />,
+            children: [
+              { path: 'dashboard', element: <DashBoard /> },
+              { path: 'logs', element: <Logs /> },
+              { path: 'garden', element: <Garden /> },
+              { path: 'devices', element: <Devices /> },
+              { path: 'setting', element: <Setting /> },
+              { path: 'profile', element: <Profile /> },
+            ]
+          }
+        ]
+      }
     ],
   },
 ]);

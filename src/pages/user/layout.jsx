@@ -1,4 +1,3 @@
-// src/components/Layout.jsx
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './sidebar.jsx';
@@ -9,7 +8,6 @@ function Layout() {
     <div className="layout-container">
       <Sidebar />
       <div className="layout-main">
-        {/* Khu vực nội dung chính */}
         <div className="layout-content">
           <Outlet />
         </div>

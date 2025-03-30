@@ -1,7 +1,5 @@
-/* src/pages/DonutChartPage.css */
-
 .donut-page-container {
-  background-color: #9ee98f; /* Xanh lá nhạt */
+  background-color: #9ee98f;
   border-radius: 16px;
   padding: 20px;
   margin-top: 10px;
@@ -15,14 +13,12 @@
   color: #333;
 }
   
-/* Thay thế đoạn CSS cũ trong .donut-charts-grid */
 .donut-charts-grid {
   display: grid;
-  /* 2 cột, mỗi cột chiếm 1 phần ngang nhau */
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-  /* Mỗi ô biểu đồ */
+
 .donut-item {
   background-color: #c1f0ad;
   border-radius: 16px;
@@ -30,7 +26,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Tùy chỉnh chiều cao tối thiểu nếu muốn, ví dụ: */
   max-height: 190px;
   max-width: 190px;
 }

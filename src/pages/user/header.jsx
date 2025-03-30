@@ -1,15 +1,12 @@
-// src/components/Header.jsx
 import React, { useState } from 'react';
 import './header.css';
 import iconSetting from '../../assets/iconSetting.png'
 
 function Header() {
-  // State để điều khiển mở/đóng menu
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const userName = "Nguyễn Khánh Lộc";
 
-  // Hàm toggle dropdown
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };

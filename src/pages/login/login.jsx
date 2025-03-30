@@ -5,6 +5,7 @@ import LoginFarm from '../../assets/loginFarm.png';
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const validateEmail = (email) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -12,43 +13,55 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         if (!email || !password) {
             alert("Vui lòng nhập đầy đủ email và mật khẩu");
             return;
         }
-
+    
         if (!validateEmail(email)) {
             alert("Địa chỉ email không hợp lệ");
             return;
         }
-
+    
+        setLoading(true);
+    
         try {
-            // const response = await fetch("https://api.example.com/login", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json"
-            //     },
-            //     body: JSON.stringify({ email, password })
-            // });
-
-            // const data = await response.json();
-
-            // if (!response.ok) {
-            //     throw new Error(data.message || "Đăng nhập thất bại");
-            // }
-
-            // console.log("Đăng nhập thành công:", data);
-            if (email === "loc.nguyenkhanh@hcmut.edu.vn" && password === "123456") {
+            const response = await fetch("/api/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email, password })
+            });
+    
+            const text = await response.text(); // Lấy phản hồi từ server
+    
+            if (text.startsWith("ey")) { // Nếu phản hồi là JWT token
+                sessionStorage.setItem("token", text);
                 window.location.href = "/user/dashboard";
+            }
+            else if (text === "Email or Password is not correct") {
+                alert("Email hoặc mật khẩu không đúng!");
             } else {
-                alert("Đăng nhập thất bại");
+                try {
+                    const data = JSON.parse(text);
+                    if (data.token) {
+                        sessionStorage.setItem("token", data.token);
+                        window.location.href = "/user/dashboard";
+                    } else {
+                        alert("Đăng nhập thất bại: " + (data.message || "Lỗi không xác định"));
+                    }
+                } catch (error) {
+                    alert("Lỗi phân tích phản hồi từ server!");
+                }
             }
         } catch (error) {
-            alert(error.message);
+            alert("Lỗi kết nối đến server: " + error.message);
+        } finally {
+            setLoading(false);
         }
     };
-
     return (
         <div className={styles.login_container} style={{ boxSizing: 'border-box' }}>
             <div className={styles.login_form}>
@@ -75,10 +88,12 @@ const Login = () => {
                     />
 
                     <div className={styles.forgot_password}>
-                        <a href="#">Quên mật khẩu?</a>
+                        <a href="forgot">Quên mật khẩu?</a>
                     </div>
 
-                    <button className={styles.login_btn} type="submit">Đăng nhập</button>
+                    <button className={styles.login_btn} type="submit" disabled={loading}>
+                        {loading ? "Đang đăng nhập..." : "Đăng nhập"}
+                    </button>
                 </form>
 
                 <div className={styles.separator}>Hoặc</div>
@@ -89,7 +104,7 @@ const Login = () => {
                 </button>
 
                 <p className={styles.register_link}>
-                    Chưa có tài khoản? <a href="#">Đăng ký</a>
+                    Chưa có tài khoản? <a href="register">Đăng ký</a>
                 </p>
 
                 <footer className={styles.footer}>© 2025 TẤT CẢ QUYỀN ĐƯỢC BẢO HỘ</footer>

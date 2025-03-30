@@ -1,4 +1,3 @@
-// src/components/Control.jsx
 import { useState, useEffect } from "react";
 import FanAnimation from '../../../assets/fan.gif';
 import FanOff from '../../../assets/fan.jpg';

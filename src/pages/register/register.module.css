@@ -1,16 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-  
-.login_container {
+.register_container {
     display: flex;
     height: 100vh;
 }
 
-.login_form {
+.register_form {
     width: 50%;
     padding: 0 100px 0 160px;
     display: flex;
@@ -47,19 +40,7 @@
     font-size: 20px;
 }
 
-.forgot_password {
-    text-align: right;
-    margin-top: 5px;
-    font-size: 20px;
-}
-
-.forgot_password a {
-    color: #3366cc;
-    font-size: 14px;
-    text-decoration: none;
-}
-
-.login_btn {
+.register_btn {
     background: #0a0f0d;
     color: white;
     padding: 12px;
@@ -68,7 +49,6 @@
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
-    text-decoration: none;
     text-align: center;
 }
 
@@ -78,7 +58,7 @@
     color: #aaa;
 }
 
-.google_login {
+.google_register {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,20 +68,19 @@
     border-radius: 6px;
     cursor: pointer;
     background: white;
-    color: black;
 }
 
-.google_login img {
+.google_register img {
     width: 20px;
     height: 20px;
 }
 
-.register_link {
+.login_link {
     text-align: center;
     margin-top: 20px;
 }
 
-.register_link a {
+.login_link a {
     color: #3366cc;
     text-decoration: none;
 }
@@ -113,14 +92,14 @@
     color: #aaa;
 }
 
-.login_image {
+.register_image {
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.login_image img {
+.register_image img {
     width: 75%;
     border-radius: 12px;
     max-height: 90vh;

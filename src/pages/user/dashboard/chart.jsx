@@ -1,4 +1,3 @@
-// src/pages/Chart.jsx
 import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
@@ -51,8 +50,6 @@ function ChartPage() {
         },
       });
       const data = await response.json();
-      // data là mảng các bản ghi, mỗi bản ghi có field "value"
-      // Ta parse float và reverse() để giá trị cũ hơn nằm bên trái
       const values = data.map(item => parseFloat(item.value)).reverse();
       setter(values);
     } catch (error) {
@@ -61,7 +58,6 @@ function ChartPage() {
     }
   };
 
-  // useEffect để fetch cả 4 feed khi component mount
   useEffect(() => {
     async function fetchAll() {
       await Promise.all([
@@ -77,15 +73,12 @@ function ChartPage() {
     // return () => clearInterval(interval);
   }, []);
 
-  // Nếu đang tải dữ liệu
   if (loading) {
     return <div className="chart-container">Đang tải dữ liệu biểu đồ...</div>;
   }
 
-  // Tạo nhãn (labels) đơn giản từ 1 đến 10 (hoặc có thể là thời gian)
   const labels = Array.from({ length: 10 }, (_, i) => i + 1);
 
-  // Chuẩn bị data cho chart
   const chartData = {
     labels,
     datasets: [
@@ -94,7 +87,7 @@ function ChartPage() {
         data: tempData,
         borderColor: 'red',
         backgroundColor: 'red',
-        tension: 0.3, // bo tròn line
+        tension: 0.3,
       },
       {
         label: 'Độ ẩm không khí',
@@ -131,13 +124,13 @@ function ChartPage() {
     },
     scales: {
       y: {
-        suggestedMin: 0,  // hoặc tuỳ ý
+        suggestedMin: 0,
         suggestedMax: 100, 
         grid: {
-          color: '#000000',  // màu lưới
+          color: '#000000',
         },
         ticks: {
-          color: '#000000',  // màu chữ trên trục
+          color: '#000000',
         },
       },
       x: {
