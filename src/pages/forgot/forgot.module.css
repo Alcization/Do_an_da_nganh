@@ -168,4 +168,79 @@
 .resetPasswordButton:hover {
   background: #218838;
 }
+
+@media only screen and (max-width: 768px) {
+.forgot_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+.forgot_form {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.forgot_form h2 {
+  font-size: 24px;
+}
+
+.forgot_form p {
+  font-size: 14px;
+}
+
+.forgot_form label {
+  font-size: 16px;
+}
+
+.forgot_form input {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.sendOtpButton {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.modalContent {
+  width: 90%;
+  padding: 20px;
+}
+
+.modalContent h3 {
+  font-size: 18px;
+}
+
+.modalContent input[type="text"],
+.modalContent input[type="password"] {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.modalButtons {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resendButton,
+.confirmOtpButton,
+.cancelButton {
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.resetForm {
+  gap: 10px;
+}
+
+.resetPasswordButton {
+  font-size: 14px;
+  padding: 10px;
+}
+}
   

@@ -45,7 +45,9 @@ const Introduce = () => {
                 <img src={IntroIot} alt="" />
                 <img src={IntroRef} alt="" style={{paddingLeft: 20}}/>
             </div>
-            <img src={Footer} alt="" />                  
+            <div className={styles.footer}>
+                <img src={Footer} alt="" />  
+            </div>              
         </>     
       );
 }
