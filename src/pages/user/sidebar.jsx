@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './sidebar.css';
 
@@ -10,7 +10,7 @@ import IconUser from '../../assets/iconUser.png';
 import IconLogout from '../../assets/IconLogout.png';
 import IconNotification from '../../assets/iconNotification.png';
 
-function Sidebar() {
+function Sidebar({ isOpen, closeSidebar }) {
   const navigate = useNavigate();
 
   const user = {
@@ -32,8 +32,35 @@ function Sidebar() {
     navigate('/login');
   };
 
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const distance = touchStartX.current - touchEndX.current;
+      if (distance > 50) {
+        closeSidebar();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
-    <div className="sidebar-container">
+    <div
+      className={`sidebar-container ${isOpen ? 'open' : ''}`}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="sidebar-header">
         <h3>Smart Garden</h3>
       </div>
@@ -74,7 +101,6 @@ function Sidebar() {
         </li>
       </ul>
 
-      {/* Thêm phần người dùng & logout */}
       <div className="sidebar-footer">
         <NavLink to="/user/notifications" className="sidebar-item">
           <img src={IconNotification} alt="Notifications" style={{width:20, height:20}}/>
@@ -99,3 +125,5 @@ function Sidebar() {
 }
 
 export default Sidebar;
+
+
