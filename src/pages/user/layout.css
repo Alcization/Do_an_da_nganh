@@ -1,7 +1,6 @@
 .layout-container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -33,12 +32,20 @@
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+.layout-container {
+  height: 100vh;
+}
+}
+
 @media (max-width: 768px) {
 .sidebar-toggle {
   display: block;
 }
 
 .layout-container {
+  display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 }

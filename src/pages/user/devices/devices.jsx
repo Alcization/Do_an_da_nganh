@@ -107,20 +107,22 @@ function Devices() {
         <tbody>
           {filteredDevices.map((device) => (
             <tr key={device.id}>
-              <td>{device.name}</td>
-              <td>{device.type}</td>
-              <td>{device.code}</td>
-              <td>{device.greenhouse || 'Không có'}</td>
-              <td className={device.status === 'on' ? styles.statusOn : styles.statusOff}>
+              <td data-label="Tên thiết bị">{device.name}</td>
+              <td data-label="Loại thiết bị">{device.type}</td>
+              <td data-label="Mã thiết bị">{device.code}</td>
+              <td data-label="Nhà kính">{device.greenhouse || 'Không có'}</td>
+              <td data-label="Trạng thái" className={device.status === 'on' ? styles.statusOn : styles.statusOff}>
                 {device.status === 'on' ? 'Bật' : 'Tắt'}
               </td>
-              <td>
-                <button className={styles.toggleButton} onClick={() => handleToggleStatus(device.id)}>
-                  {device.status === 'on' ? 'Tắt' : 'Bật'}
-                </button>
-                <button className={styles.deleteButton} onClick={() => handleDeleteClick(device)}>
-                  Xóa
-                </button>
+              <td data-label="Hành động">
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  <button className={styles.toggleButton} onClick={() => handleToggleStatus(device.id)}>
+                    {device.status === 'on' ? 'Tắt' : 'Bật'}
+                  </button>
+                  <button className={styles.deleteButton} onClick={() => handleDeleteClick(device)}>
+                    Xóa
+                  </button>
+                </div>
               </td>
             </tr>
           ))}

@@ -136,3 +136,61 @@
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .addButton {
+    width: 100%;
+  }
+
+  .deviceTable {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .deviceTable thead {
+    display: none;
+  }
+
+  .deviceTable tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .deviceTable td {
+    border: none;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .deviceTable td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex: 1;
+    padding-right: 10px;
+  }
+
+  .toggleButton,
+  .deleteButton {
+    width: 48%;
+    margin: 5px 1%;
+  }
+}
