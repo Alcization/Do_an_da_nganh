@@ -98,6 +98,23 @@ function Setting() {
         </tbody>
       </table>
 
+      <div className={styles.userCardList}>
+        {filteredUsers.map((user) => (
+          <div key={user.id} className={styles.userCard}>
+            <p><strong>Tên:</strong> {user.name}</p>
+            <p><strong>Vị trí:</strong> {user.role}</p>
+            <p><strong>Ngày thuê:</strong> {user.hiredDate}</p>
+            <p><strong>Điện thoại:</strong> {user.phone}</p>
+            <p><strong>Email:</strong> {user.email}</p>
+            <div className={styles.userCardActions}>
+              <button className={styles.deleteButton} onClick={() => handleDeleteClick(user)}>
+                Xóa
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Modal Thêm người dùng */}
       {addingNew && (
         <div className={styles.modal}>

@@ -116,4 +116,11 @@
     cursor: pointer;
     border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+    .greenhouseCard {
+      width: calc(50% - 10px); /* Hiển thị 2 thẻ mỗi dòng */
+    }
+}
+  
   
