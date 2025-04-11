@@ -1,6 +1,8 @@
 .container {
   display: flex;
-  width: 1700px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
   margin: auto;
   gap: 20px;
   padding: 20px;
@@ -183,4 +185,72 @@
 
 .cancelButton:hover {
   background: #5a6268;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+  }
+
+  /* Ảnh avatar nhỏ lại, căn giữa */
+  .avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+  }
+
+  .updateAvatarButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Các nhóm form gọn lại */
+  .formGroup {
+    gap: 8px;
+  }
+
+  .personalInfo input,
+  .changePassword input {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .saveButton,
+  .changePasswordButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Modal OTP co lại */
+  .modalContent {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  .modalButtons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .resendButton,
+  .confirmOtpButton,
+  .cancelButton {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
 }

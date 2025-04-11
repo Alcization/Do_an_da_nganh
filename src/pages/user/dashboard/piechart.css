@@ -3,7 +3,7 @@
   border-radius: 16px;
   padding: 20px;
   margin-top: 10px;
-  width: 90%;
+  width: 100%;
   max-width: 450px; 
   text-align: center;
 }
@@ -28,5 +28,30 @@
   justify-content: center;
   max-height: 190px;
   max-width: 190px;
+}
+
+@media screen and (max-width: 768px) {
+  .donut-charts-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .donut-item {
+    max-width: 100%;
+    max-height: 160px;
+    padding: 8px;
+  }
+
+  .donut-page-container {
+    padding: 12px;
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .donut-charts-grid {
+    grid-template-columns: 1fr;
+  }
 }
   

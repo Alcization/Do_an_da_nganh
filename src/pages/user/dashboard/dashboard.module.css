@@ -17,3 +17,20 @@
   cursor: pointer;
   border-radius: 8px;
 }
+
+@media screen and (max-width: 768px) {
+  .charts_row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .donut-page-container,
+  .controlContainer {
+    flex: 1 1 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+    box-sizing: border-box;
+  }
+}
