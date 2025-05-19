@@ -7,7 +7,7 @@ function WeatherPage() {
 
   const lat = 10.762622;
   const lon = 106.660172;
-  const apiKey = '3484882c3c67bfac004337c69b2748cf';
+  const apiKey = 'KEY';
 
   useEffect(() => {
     async function fetchWeather() {
