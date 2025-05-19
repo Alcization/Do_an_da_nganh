@@ -36,7 +36,7 @@ const centerTextPlugin = {
 ChartJS.register(centerTextPlugin);
 
 const ADAFRUIT_USERNAME = "nhatnam1308";
-const ADAFRUIT_API_KEY = "aio_KnNE17mpKp91gUsfTj29pP00orQ6";
+const ADAFRUIT_API_KEY = "KEY";
 
 // Các FEED_KEY
 const FEED_TEMP       = "bbc-temp";  
