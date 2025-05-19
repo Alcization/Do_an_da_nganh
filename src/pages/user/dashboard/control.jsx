@@ -6,7 +6,7 @@ import LightOff from '../../../assets/bulbOff.png';
 import styles from "./Control.module.css";
 
 const ADAFRUIT_USERNAME = "nhatnam1308";
-const ADAFRUIT_API_KEY = "aio_KnNE17mpKp91gUsfTj29pP00orQ6";
+const ADAFRUIT_API_KEY = "KEY";
 
 // Feed keys và API URL cho máy bơm và đèn LED
 const PUMP_FEED_KEY = "bbc-pump1";
