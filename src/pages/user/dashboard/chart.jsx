@@ -25,7 +25,7 @@ ChartJS.register(
 
 // Thông tin Adafruit IO
 const ADAFRUIT_USERNAME = "nhatnam1308";
-const ADAFRUIT_API_KEY = "aio_KnNE17mpKp91gUsfTj29pP00orQ6";
+const ADAFRUIT_API_KEY = "KEY";
 
 // Các feed keys
 const FEED_TEMP = "bbc-temp";
